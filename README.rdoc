@@ -9,7 +9,13 @@
 
 A joint production of
 
-[list everybody in the class, including me]
+* Brian Gates
+* Devan Kestel
+* Leslie Brown
+* John Bier
+* Heidi Roude
+* Erik Jenks
+* Jourdan Turner
 
 * commit your changes
 * push your changes
