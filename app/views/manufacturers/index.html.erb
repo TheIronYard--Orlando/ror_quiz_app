@@ -2,6 +2,6 @@
 
 <ul>
   <% @manufacturers.each do |m| %>
-    <li><%= link_to m.name, manufacturer_path(m.id) %></li>
+    <li><%= link_to m.name, manufacturer_path(m.name) %></li>
   <% end %>
 </ul>
