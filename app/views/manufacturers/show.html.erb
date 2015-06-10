@@ -1,0 +1,14 @@
+<h1><%= @manufacturer.name %></h1>
+
+<p>
+  <% if @manufacturer.domestic == true %>
+    <%= @manufacturer.name %> is a domestic car
+  <% else %>
+    <%= @manufacturer.name %> is a foreign car
+
+  <% end %>
+</p>
+
+<%= link_to "Edit Manufacturer", edit_manufacturer_path %>
+
+<%= link_to "Home", root_path %>
