@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   root 'manufacturers#index'
+  get 'manufacturers/:id' => 'manufacturers#show', as: :manufacturer
 
 get 'manufacturers' => 'manufacturers#index'
 

@@ -2,8 +2,9 @@
 
 one:
   name: MyString
-  domestic: false
+  deomestic: false
 
 two:
   name: MyString
-  domestic: false
+  deomestic: false
+  
