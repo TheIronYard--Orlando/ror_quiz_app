@@ -1,9 +1,7 @@
+<h1> <%= @manufacturer.name %> </h1>
 
-<h1> <%= @manufacturer.name %> </h1>		
-	<p><%= @manufacturer.name%> is a <%= @manufacturer.domestic_or_foreign(manufacturer) %> manufacturer.</p>
+<p> <%= @manufacturer.name %> is a <% if @manufacturer.domestic %> domestic <% else %> foreign <% end %> car manufacturer.</p>
 
-	
-		<%= link_to 'Return to complete manufacturer list', manufacturer_path %>
-		<br>
-		<br>
-		<%= link_to 'Edit this manufacturer', edit_manufacturer_path(@manufacturer) %>
+<p><%= link_to "Edit", edit_manufacturer_path(@manufacturer) %></p>
+
+<p><%= link_to "Home", root_path %></p>
