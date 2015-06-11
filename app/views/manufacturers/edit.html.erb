@@ -10,3 +10,4 @@
 <% end %>
 
 <p><%= link_to "Home", root_path %></p>
+<p><%= button_to "Delete Manufacturer", manufacturer_path(@manufacturer), method: :delete, data: {confirm: "Are you sure?"} %></p>
