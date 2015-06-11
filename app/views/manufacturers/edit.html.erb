@@ -1,0 +1,18 @@
+<h1>Edit Manufacturer</h1>
+
+<%= form_for @manufacturer do |m| %>
+
+		<%= m.label :name %>
+		<%= m.text_field :name%>	 
+<br>
+<br>	<%= m.label :domestic, 'Domestic', :value => true %>
+		<%= m.text_button :domestic, true %>
+		
+<br>
+<br>
+		<%= m.label :foreign, 'Foreign', :value => false %>
+		<%= m.text_button :domestic, false %>
+<br>
+<br>
+		<%= m.submit %>   						
+	<% end %>

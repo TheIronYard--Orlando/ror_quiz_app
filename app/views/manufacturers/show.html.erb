@@ -1,0 +1,9 @@
+
+<h1> <%= @manufacturer.name %> </h1>		
+	<p><%= @manufacturer.name%> is a <%= @manufacturer.domestic_or_foreign(manufacturer) %> manufacturer.</p>
+
+	
+		<%= link_to 'Return to complete manufacturer list', manufacturer_path %>
+		<br>
+		<br>
+		<%= link_to 'Edit this manufacturer', edit_manufacturer_path(@manufacturer) %>

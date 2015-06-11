@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
   
+  resources :manufacturers
+
   root 'manufacturers#index'
 
-get 'manufacturers' => 'manufacturers#index' 
 
-get 'manufacturers/:id/show' => 'manufacturers#show', as: :show_manufacturers
-
-get 'manufacturers/:id/edit' => 'manufacturers#edit', as: :edit_manufacturer
-
-patch 'manufacturers/:id/update' => 'manufacturers#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
