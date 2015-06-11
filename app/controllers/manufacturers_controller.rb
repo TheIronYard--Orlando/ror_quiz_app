@@ -18,5 +18,10 @@ class ManufacturersController < ApplicationController
     flash[:notice] = "Manufacturer successfully updated!"
     redirect_to manufacturer_path
   end
+  def destroy
+    @manufacturer = Manufacturer.find(params[:id])
+    @manufacturer.destroy
+    redirect_to root_path
+  end
 
 end
