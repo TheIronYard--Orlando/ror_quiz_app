@@ -25,4 +25,13 @@ class ManufacturersController < ApplicationController
     redirect_to root_url
   end
 
+  def destroy
+    @manufacturer=Manufacturer.find(params[:id])
+    @manufacturer.destroy
+
+    flash.notice="'#{@manufacturer.name}' was deleted"
+
+    redirect_to root_path
+  end
+
 end
