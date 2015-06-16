@@ -1,4 +1,5 @@
 class Manufacturer < ActiveRecord::Base
+	has_many :car_models
 
 	def domestic_or_foreign
   		if domestic?
@@ -7,4 +8,5 @@ class Manufacturer < ActiveRecord::Base
   			'foreign'
   		end
  	end
+
 end
