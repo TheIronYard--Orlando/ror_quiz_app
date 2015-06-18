@@ -1,0 +1,26 @@
+<h1> Add Manufacturer Factory</h1>
+<br>
+<br>
+  <%= form_for ([@manufacturer, @car_model]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+<br>
+<br>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+<br>
+<br>
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+<br>
+<br>
+  <%= f.label :unionized, ""True" if Unionionized // "False" if Non-Unionized " %>
+  <%= f.text_field :unionized %>  
+<br>
+<br>
+	<%= f.button "Add Factory" %>
+  <% end %>
+
+<p><%= button_to "Add Manufacturer Factory", new_manufacturer_factory_path(@manufacturer) %></p>
+
+

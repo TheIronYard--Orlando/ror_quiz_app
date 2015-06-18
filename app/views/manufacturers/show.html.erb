@@ -1,7 +1,74 @@
 <h1> <%= @manufacturer.name %> </h1>
 
-<p> <%= @manufacturer.name %> is a <% if @manufacturer.domestic %> domestic <% else %> foreign <% end %> car manufacturer.</p>
+	<p> <%= @manufacturer.name %> is a <% if @manufacturer.domestic %> domestic <% else %> foreign <% end %> car manufacturer.</p>
+	
+<p><%= link_to "EDIT THIS MANUFACTURER", edit_manufacturer_path(@manufacturer) %></p><br>
 
-<p><%= link_to "Edit", edit_manufacturer_path(@manufacturer) %></p>
+<p><%= link_to "ADD A CAR MODEL", new_manufacturer_car_model_path(@manufacturer) %></p><br>
+	
+<h2> <%= @manufacturer.name %> Car Models </h2>
+  <table>
+	<thead>
+		<style> table, th, td
+      {border: 2px solid black; table-layout: fixed; width: 200px; padding: 10px; text-align: left;}
+    	</style>
+    		<tr>
+      			<th>Model Name</th>
+      			<th>Gas Mileage</th>
+      			<th>Base Price</th>
+    		</tr>
+  	</thead> 
+	<tbody>
+    	<% @manufacturer.car_models.each do |x| %>
+      	<tr>
+        	<td><%= x.name %></td>
+        	<td><%= x.mpg%> mpg </td>
+        	<td> $ <%= x.price %> k </td>
+      	</tr>
+        <% end %>
+  	</tbody>
+  </table><br><br>
 
-<p><%= link_to "Home", root_path %></p>
+<p><%= link_to "ADD A FACTORY", new_manufacturer_factory_path(@manufacturer) %></p><br>
+
+<h2> <%= @car_model.name %> FACTORY </h2><br>
+
+    <p> This <%= @manufacturer.name %> <%= @car_model.name %> factory is 
+      <% if @factories.unionized %> Unionized <% else %> Non-Unionized. <% end %></p>
+  <table>
+	<thead>
+		<style> table, th, td
+      {border: 2px solid black; table-layout: fixed; width: 200px; padding: 10px; text-align: left;}
+    	</style>
+    		<tr>
+      			<th>Factory Name</th>
+      			<th>City</th>
+      			<th>State</th>
+      			<th>Unionized ?</th>
+    		</tr>
+  	</thead> 
+	<tbody>
+    	<% @car_model.factories.each do |x| %>
+      	<tr>
+        	<td><%= x.name %></td>
+        	<td><%= x.city %></td>
+        	<td><%= x.state %></td>
+        	<td><%= x.unionized %></td>
+      	</tr>
+        <% end %>
+  	</tbody>
+  </table><br><br>
+
+  <p><%= link_to "RETURN TO MAIN MANUFACTURER LIST", root_path %></p><br>
+
+
+
+
+
+
+
+
+
+
+
+
