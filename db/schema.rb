@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150617204135) do
+ActiveRecord::Schema.define(version: 20150618142040) do
 
   create_table "car_models", force: :cascade do |t|
     t.string   "name"
@@ -22,14 +22,19 @@ ActiveRecord::Schema.define(version: 20150617204135) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "car_models_factories", id: false, force: :cascade do |t|
+    t.integer "car_model_id"
+    t.integer "factory_id"
+  end
+
   create_table "factories", force: :cascade do |t|
     t.string   "name"
     t.string   "state"
     t.string   "city"
     t.boolean  "unionized"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "car_model_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "manufacturer_id"
   end
 
   create_table "manufacturers", force: :cascade do |t|
