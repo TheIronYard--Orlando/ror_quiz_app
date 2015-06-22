@@ -11,12 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615154124) do
+ActiveRecord::Schema.define(version: 20150618133951) do
 
   create_table "car_models", force: :cascade do |t|
     t.string   "name"
     t.integer  "mpg"
     t.integer  "price"
+    t.integer  "manufacturer_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "car_models_factories", id: false, force: :cascade do |t|
+    t.integer "car_models_id"
+    t.integer "factories_id"
+  end
+
+  add_index "car_models_factories", ["car_models_id"], name: "index_car_models_factories_on_car_models_id"
+  add_index "car_models_factories", ["factories_id"], name: "index_car_models_factories_on_factories_id"
+
+  create_table "factories", force: :cascade do |t|
+    t.string   "city"
+    t.string   "state"
+    t.boolean  "unionized"
     t.integer  "manufacturer_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
