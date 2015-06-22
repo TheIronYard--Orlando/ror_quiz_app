@@ -1,11 +1,10 @@
-<h1> <%= @car_model.name %> </h1>
-<br>
-<br>
-<h2> Factories </h2>
 
-  <%= form_for ([@manufacturer, @car_model]) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<h1><%= @car_model.name %></h1>
 
+<h2>Factories</h2>
+
+<ul>
+  <% @car_model.factories.each do |factory| %>
+    <li><%= factory.location %></li>
   <% end %>
-
+</ul>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1> Add Manufacturer Factory</h1>
 <br>
 <br>
@@ -24,3 +25,22 @@
 <p><%= button_to "Add Manufacturer Factory", new_manufacturer_factory_path(@manufacturer) %></p>
 
 
+=======
+<h1>New Factory</h1>
+
+<%= form_for([@manufacturer, @factory]) do |f| %>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+<br>
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+<br>
+  <%= f.label :unionized, "Yes" %>
+  <%= f.radio_button :unionized, true %>
+<br>
+  <%= f.label :unionized, "No" %>
+  <%= f.radio_button :unionized, false %>
+<br>
+  <%= f.button "Create New Factory" %>
+<% end %>
+>>>>>>> 1583b74a9d214eb81c77ca6a8157a24158715fcf

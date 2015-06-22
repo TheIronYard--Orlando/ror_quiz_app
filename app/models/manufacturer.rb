@@ -3,12 +3,5 @@ class Manufacturer < ActiveRecord::Base
 	has_many :factories
 	validates :name, presence: true
 
-	def domestic_or_foreign
-  		if domestic?
-  			'domestic'
-  		else
-  			'foreign'
-  		end
- 	end
 
 end

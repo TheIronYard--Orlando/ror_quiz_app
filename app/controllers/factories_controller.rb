@@ -1,38 +1,29 @@
 class FactoriesController < ApplicationController
 
+  def show
+    @factory = Factory.find(params[:id])
+  end
 
-	def new
-		@factory = Factory.new
-		# @manufacturers = Manufacturer.find(params[:manufacturer_id])
-		@car_models = CarModel.find(params[:car_model_id])
-	end
+  def new
+    @manufacturer = Manufacturer.find(params[:manufacturer_id])
+    @factory = Factory.new
+  end
 
-	def create
-		@car_models = CarModel.find(params[:car_model_id])
-		# @manufacturer = Manufacturer.find(params[:manufacturer_id])
-		@factory = @car_model.factories.create(params.require(:factory).permit(:name, :state, :city, :unionized))
-		redirect_to	manufacturer_path
-	end	
+  def create
+    @manufacturer = Manufacturer.find(params[:manufacturer_id])
 
-	def show
-		@car_models = CarModel.find(params[:car_model_id])
-		# @manufacturer = Manufacturer.find(params[:manufacturer_id])
-    	@factory = @manufacturer.factory.find(params[:id])
+    @factory = @manufacturer.factories.create(factory_params)
+    if @factory.valid?
+      redirect_to manufacturer_path(@manufacturer)
+    else
+      render 'new'
     end
+  end
 
 
-end    # END class
+  private
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  def factory_params
+    params.require(:factory).permit(:city, :state, :unionized)
+  end
+end

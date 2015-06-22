@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   name: MyString
   state: MyString
   city: MyString
@@ -10,4 +11,13 @@ two:
   name: MyString
   state: MyString
   city: MyString
+=======
+  city: MyString
+  state: MyString
+  unionized: false
+
+two:
+  city: MyString
+  state: MyString
+>>>>>>> 1583b74a9d214eb81c77ca6a8157a24158715fcf
   unionized: false
