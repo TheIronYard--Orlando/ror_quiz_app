@@ -1,1 +1,9 @@
 <h1><%= @car_model.name %></h1>
+
+<h2>Factories</h2>
+
+<ul>
+  <% @car_model.factories.each do |factory| %>
+    <li><%= factory.location %></li>
+  <% end %>
+</ul>

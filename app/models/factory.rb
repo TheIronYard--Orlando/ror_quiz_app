@@ -5,4 +5,7 @@ class Factory < ActiveRecord::Base
   validates :city, uniqueness: true, presence: true
   validates :state, uniqueness: true, presence: true
 
+  def location
+    "#{city}, #{state}"
+  end
 end
