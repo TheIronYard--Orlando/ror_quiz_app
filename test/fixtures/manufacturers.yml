@@ -2,8 +2,16 @@
 
 one:
   name: MyString
+<<<<<<< HEAD
   domestic: false
 
 two:
   name: MyString
   domestic: false
+=======
+  deomestic: false
+
+two:
+  name: MyString
+  deomestic: false
+>>>>>>> fcc1c5516442c92572f613d4a818144d28b59aff

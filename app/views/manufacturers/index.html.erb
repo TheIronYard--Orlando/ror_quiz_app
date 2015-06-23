@@ -1,7 +1,14 @@
 <h1>Manufacturers</h1>
 
 <ul>
+<<<<<<< HEAD
   <% @manufacturers.each do |m| %>
     <li><%= link_to m.name, manufacturer_path(m) %></li>
+=======
+  <% @manufacturers.each do |manufacturer| %>
+    <li><%= link_to manufacturer.name, manufacturer_path(manufacturer) %></li>
+>>>>>>> fcc1c5516442c92572f613d4a818144d28b59aff
   <% end %>
 </ul>
+
+<%= link_to "New Manufacturer", new_manufacturer_path %>
