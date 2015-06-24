@@ -3,12 +3,18 @@ Rails.application.routes.draw do
 
   root 'manufacturers#index'
 
+<<<<<<< HEAD
+get 'manufacturers' => 'manufacturers#index'
+
+get 'manufacturers/:id/show' => 'manufacturers#show', as: :manufacturer
+=======
   resources :manufacturers do
 
     resources :factories
     resources :car_models
   end
 
+>>>>>>> fcc1c5516442c92572f613d4a818144d28b59aff
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

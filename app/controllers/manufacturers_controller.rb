@@ -5,6 +5,10 @@ class ManufacturersController < ApplicationController
   end
 
   def show
+<<<<<<< HEAD
+  	@manufacturer = Manufacturer.find(params[:id])
+  end
+=======
     @manufacturer = Manufacturer.find(params[:id])
   end
 
@@ -25,4 +29,5 @@ class ManufacturersController < ApplicationController
     redirect_to root_url
   end
 
+>>>>>>> fcc1c5516442c92572f613d4a818144d28b59aff
 end
