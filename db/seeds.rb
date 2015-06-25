@@ -43,3 +43,5 @@ camry = toyota.car_models.create(name: 'Camry', mpg: 35, price: 22970)
 tupelo.car_models << corolla
 georgetown.car_models << camry
 lafayette.car_models << camry
+
+User.create(email: "erikjenks@gmail.com", password: "password")
