@@ -38,11 +38,10 @@ ActiveRecord::Schema.define(version: 20150629131403) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "production_lines", id: false, force: :cascade do |t|
+  create_table "production_lines", force: :cascade do |t|
     t.integer "car_model_id"
     t.integer "factory_id"
     t.integer "annual_quota"
-    t.integer "id"
   end
 
   add_index "production_lines", ["car_model_id"], name: "index_production_lines_on_car_model_id"
