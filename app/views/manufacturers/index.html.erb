@@ -1,9 +1,15 @@
 <h1>Manufacturers</h1>
 
+
+
 <ul>
   <% @manufacturers.each do |manufacturer| %>
     <li><%= link_to manufacturer.name, manufacturer_path(manufacturer) %></li>
   <% end %>
+</ul>
+
+<ul>
+		<li><%=link_to "Show Domestic", manufacturer.name, manufacturer_path(manufacturer) %> "class= "domestic_link",</li>
 </ul>
 
 <%= link_to "New Manufacturer", new_manufacturer_path %>
