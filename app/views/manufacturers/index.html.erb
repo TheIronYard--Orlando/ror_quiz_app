@@ -15,17 +15,18 @@
 <%= link_to "New Manufacturer", new_manufacturer_path %>
 <script>
   $( "#foreign" ).click(function() {
-    $( ".foreign" ).toggleClass("highlight");    
+    $( ".foreign" ).toggleClass("display");    
   });
   $( "#domestic" ).click(function() {
-    $( ".domestic" ).toggleClass("highlight");    
+    $( ".domestic" ).toggleClass("display");    
   });
   $( "#all" ).click(function() {
-    $( "li a" ).toggleClass("highlight");    
+    $( "li a" ).toggleClass("display");    
   });
 </script>
 <style>
-.highlight{
-  background: hsla(120, 75%, 25%, 0.5);
+.display{
+  display: none;
+  /*background: hsla(120, 75%, 25%, 0.5);*/
 }
 </style>
