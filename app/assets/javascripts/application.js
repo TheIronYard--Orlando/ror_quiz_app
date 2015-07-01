@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14,3 +15,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+  $('#show_domestic').click(function(){
+    $('.domestic_false').show();
+    $('.domestic_true').hide();
+  });
+
+  $('#show_foreign').click(function(){
+    $('.domestic_false').hide();
+    $('.domestic_true').show();
+  });
+
+  $('#show_all').click(function(){
+    $('.domestic_false').show();
+    $('.domestic_true').show();
+  });
+
+});
