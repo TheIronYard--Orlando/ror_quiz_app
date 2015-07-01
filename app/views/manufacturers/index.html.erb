@@ -1,9 +1,32 @@
 <h1>Manufacturers</h1>
-
+<a href="#" id="foreign">Show Foreign</a> 
+<a href="#" id="domestic">Show Domestic</a>
+<a href="#" id="all">Show All</a>
 <ul>
   <% @manufacturers.each do |manufacturer| %>
-    <li><%= link_to manufacturer.name, manufacturer_path(manufacturer) %></li>
+    <% if manufacturer.domestic %>
+      <li><%= link_to manufacturer.name, manufacturer_path(manufacturer), class: "domestic" %></li>
+    <% else %>
+      <li><%= link_to manufacturer.name, manufacturer_path(manufacturer), class: "foreign" %></li>
+    <% end %>
   <% end %>
 </ul>
 
 <%= link_to "New Manufacturer", new_manufacturer_path %>
+<script>
+  $( "#foreign" ).click(function() {
+    $( ".foreign" ).toggleClass("display");    
+  });
+  $( "#domestic" ).click(function() {
+    $( ".domestic" ).toggleClass("display");    
+  });
+  $( "#all" ).click(function() {
+    $( "li a" ).toggleClass("display");    
+  });
+</script>
+<style>
+.display{
+  display: none;
+  /*background: hsla(120, 75%, 25%, 0.5);*/
+}
+</style>
