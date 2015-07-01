@@ -20,3 +20,7 @@ p.flash {
   border: 1px solid #00ff00;
   padding: 10px;
 }
+
+.highlight{
+  background: hsla(120, 75%, 25%, 0.5);
+}
